@@ -8,15 +8,15 @@ def isLeaf(root):
  
 # A Nodo de árbol
 class Node:
-    def _init_(self, ch, freq, left=None, right=None):
+    def __init__(self, ch, freq, left=None, right=None):
         self.ch = ch
         self.freq = freq
         self.left = left
         self.right = right
  
-    # Anule la función `_lt_()` para hacer que la clase `Node` funcione con la cola de prioridad
+    # Anule la función `__lt__()` para hacer que la clase `Node` funcione con la cola de prioridad
     # tal que el elemento de mayor prioridad tiene la frecuencia más baja
-    def _lt_(self, other):
+    def __lt__(self, other):
         return self.freq < other.freq
  
  
@@ -114,7 +114,7 @@ def buildHuffmanTree(text):
  
  
 # Implementación del algoritmo de codificación # Huffman en Python
-if _name_ == '_main_':
+if __name__ == '__main__':
  
-    text = 'Hola mundo'
+    text = 'La buena pa Benjñ='
     buildHuffmanTree(text)
