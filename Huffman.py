@@ -52,19 +52,30 @@ def decode(root, index, s):
  
 # Construye Huffman Tree y decodifica el texto de entrada dado
 def buildHuffmanTree(text):
- 
+
+    ascii = [' ','!','"','#','$','%','&','á','é','í','ó','ú','Á','É','Í','Ó','Ú','(',')','*','+',',','-','.','/','0','1','2','3','4','5','6','7','8','9',':',';','<','=','>','?','@','A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','W','V','X','Y','Z','[',']','^','_','`','a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z','{','|','}','~',]
+
     # Caso base: string vacía
     if len(text) == 0:
         return
+
+    
  
     # cuenta la frecuencia de aparición de cada personaje
     # y almacenarlo en un diccionario
-    freq = {i: text.count(i) for i in set(text)}
+    freq = {}
+    for i in set(text):
+        if i not in ascii:
+            print("Símbolo encontrado genera error de compresión")
+            return
+        
+        freq[i] = text.count(i)
+
  
     # Crear una cola de prioridad para almacenar nodos activos del árbol de Huffman.
     pq = [Node(k, v) for k, v in freq.items()]
     heapq.heapify(pq)
- 
+    
     # hacer hasta que haya más de un nodo en la queue
     while len(pq) != 1:
  
