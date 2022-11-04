@@ -102,12 +102,13 @@ def buildHuffmanTree(text):
  
     # imprime los códigos Huffman, seteando el contador de caracteres en 2n-1
     print('Huffman Codes are: ')
-    cont = 106 
-    for i in freq:  
-        print('[',i ,',', freq[i],',' , cont,']')
-        cont = cont - 1
-        if cont == 0: 
-            return
+    print(huffmanCode)
+    # cont = 106 
+    # for i in freq:  
+    #     print('[',i ,',', freq[i],',' , cont,']')
+    #     cont = cont - 1
+    #     if cont == 0: 
+    #         return
 
     
     print('The original string is:', text)
