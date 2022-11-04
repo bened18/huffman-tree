@@ -102,10 +102,12 @@ def buildHuffmanTree(text):
  
     # imprime los códigos Huffman, seteando el contador de caracteres en 2n-1
     print('Huffman Codes are: ')
-    cont = 107 
+    cont = 106 
     for i in freq:  
         print('[',i ,',', freq[i],',' , cont,']')
         cont = cont - 1
+        if cont == 0: 
+            return
 
     
     print('The original string is:', text)
@@ -117,7 +119,7 @@ def buildHuffmanTree(text):
  
     print('The encoded string is:', s)
     print('The decoded string is:', end=' ')
- 
+
     if isLeaf(root):
         # Caso especial: Para entradas como a, aa, aaa, etc.
         while root.freq > 0:
