@@ -63,6 +63,7 @@ def buildHuffmanTree(text):
  
     # cuenta la frecuencia de aparición de cada personaje
     # y almacenarlo en un diccionario
+    # Ademas si encuentra un caracter que no pertenece al alfabeto termina y muestra un error
     freq = {}
     for i in set(text):
         if i not in ascii:
@@ -99,8 +100,14 @@ def buildHuffmanTree(text):
     huffmanCode = {}
     encode(root, '', huffmanCode)
  
-    # imprime los códigos Huffman
-    print('Huffman Codes are:', huffmanCode)
+    # imprime los códigos Huffman, seteando el contador de caracteres en 2n-1
+    print('Huffman Codes are: ')
+    cont = 213 
+    for i in freq:  
+        print('[',i ,',', freq[i],',' , cont,']')
+        cont = cont - 1
+
+    
     print('The original string is:', text)
  
     # imprime la string codificada
