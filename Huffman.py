@@ -115,6 +115,6 @@ def buildHuffmanTree(text):
  
 # Implementación del algoritmo de codificación # Huffman en Python
 if __name__ == '__main__':
- 
-    text = 'La buena pa Benjñ='
+    print ("Introduzca el texto que quiere comprimir")
+    text = input()
     buildHuffmanTree(text)
