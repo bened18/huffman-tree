@@ -102,36 +102,17 @@ def buildHuffmanTree(text):
  
     # imprime los códigos Huffman, seteando el contador de caracteres en 2n-1
     print('Huffman Codes are: ')
-    print(huffmanCode)
-    # cont = 106 
-    # for i in freq:  
-    #     print('[',i ,',', freq[i],',' , cont,']')
-    #     cont = cont - 1
-    #     if cont == 0: 
-    #         return
+    cont = 106 
+    for i in freq:  
+        print('[',i ,',', freq[i],',' , cont,']')
+        cont = cont - 1
+        if cont == 0: 
+            return
 
     
     print('The original string is:', text)
  
-    # imprime la string codificada
-    s = ''
-    for c in text:
-        s += huffmanCode.get(c)
- 
-    print('The encoded string is:', s)
-    print('The decoded string is:', end=' ')
 
-    if isLeaf(root):
-        # Caso especial: Para entradas como a, aa, aaa, etc.
-        while root.freq > 0:
-            print(root.ch, end='')
-            root.freq = root.freq - 1
-    else:
-        # atraviesa el Huffman Tree nuevamente y esta vez,
-        # decodifica la string codificada
-        index = -1
-        while index < len(s) - 1:
-            index = decode(root, index, s)
  
  
 # Implementación del algoritmo de codificación # Huffman en Python
